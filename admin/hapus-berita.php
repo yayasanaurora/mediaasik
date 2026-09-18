@@ -1,0 +1,1 @@
+<?php require "auth.php"; require "../config/database.php"; $id=filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);if($id){$stmt=$conn->prepare("DELETE FROM berita WHERE id=?");$stmt->bind_param("i",$id);$stmt->execute();}header("Location: berita.php");exit;?>
